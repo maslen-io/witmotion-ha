@@ -1,11 +1,11 @@
 {
   "domain": "witmotion",
   "name": "WitMotion Sensors",
-  "version": "1.0.0",
-  "documentation": "https://github.com/maslen-io/witmotion-ha",
-  "issue_tracker": "https://github.com/maslen-io/witmotion-ha/issues",
-  "dependencies": ["bluetooth"],
   "codeowners": ["@maslen-io"],
+  "dependencies": ["bluetooth"],
+  "documentation": "https://github.com/maslen-io/witmotion-ha",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/maslen-io/witmotion-ha/issues",
   "requirements": ["bleak-retry-connector>=3.0.0"],
-  "iot_class": "local_push"
+  "version": "1.0.0"
 }
