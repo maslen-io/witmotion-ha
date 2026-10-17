@@ -29,5 +29,18 @@ Supports:
 
 ---
 
+## HWT9053-485 Modbus Setup (USB / RS-485)
+
+For industrial wired Modbus sensors like the **HWT9053-485**:
+1. Copy `modbus_hwt9053.yaml` to your Home Assistant `/config/` directory.
+2. Include it in your `/config/configuration.yaml`:
+   ```yaml
+   modbus: !include modbus_hwt9053.yaml
+   ```
+3. Update the `port:` path if your serial identifier differs (recommended: use `/dev/serial/by-id/...`).
+4. Restart Home Assistant Core. All sensors automatically populate with signed 16-bit engineering scaling and true `unavailable` disconnect handling.
+
+---
+
 ## License
 MIT License. Created by [maslen-io](https://github.com/maslen-io).

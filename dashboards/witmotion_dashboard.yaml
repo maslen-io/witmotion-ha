@@ -1,102 +1,331 @@
-title: WitMotion Precision Dynamics
-views:
-  - title: Live Telemetry
-    path: live
-    icon: mdi:axis-arrow
-    type: masonry
-    cards:
-      - type: vertical-stack
-        cards:
-          - type: entities
-            title: HWT9053-485 Reference Inclinometer (USB)
-            show_header_toggle: false
-            entities:
-              - entity: sensor.hwt9053_roll
-                name: Roll (X-Angle)
-              - entity: sensor.hwt9053_pitch
-                name: Pitch (Y-Angle)
-              - entity: sensor.hwt9053_yaw
-                name: Yaw (Z-Angle)
-              - type: divider
-              - entity: sensor.hwt9053_acc_x
-                name: Acceleration X
-              - entity: sensor.hwt9053_acc_y
-                name: Acceleration Y
-              - entity: sensor.hwt9053_acc_z
-                name: Acceleration Z
-              - type: divider
-              - entity: sensor.hwt9053_temperature
-                name: Internal Die Temperature
-          - type: history-graph
-            title: HWT9053 - 24h Precision Tilt (Roll & Pitch)
-            hours_to_show: 24
-            entities:
-              - entity: sensor.hwt9053_roll
-                name: Roll
-              - entity: sensor.hwt9053_pitch
-                name: Pitch
-      - type: vertical-stack
-        cards:
-          - type: entities
-            title: WT901BLE68 9-Axis AHRS (Bluetooth)
-            show_header_toggle: false
-            entities:
-              - entity: sensor.wt901ble68_roll
-                name: Roll (X-Angle)
-              - entity: sensor.wt901ble68_pitch
-                name: Pitch (Y-Angle)
-              - entity: sensor.wt901ble68_yaw
-                name: Yaw (Z-Angle)
-              - type: divider
-              - entity: sensor.wt901ble68_acc_x
-                name: Acceleration X
-              - entity: sensor.wt901ble68_acc_y
-                name: Acceleration Y
-              - entity: sensor.wt901ble68_acc_z
-                name: Acceleration Z
-          - type: history-graph
-            title: WT901BLE68 - 24h Orientation Angles
-            hours_to_show: 24
-            entities:
-              - entity: sensor.wt901ble68_roll
-                name: Roll
-              - entity: sensor.wt901ble68_pitch
-                name: Pitch
-              - entity: sensor.wt901ble68_yaw
-                name: Yaw
-      - type: vertical-stack
-        cards:
-          - type: entities
-            title: WTVB01-BT50 Structural Vibration (Bluetooth)
-            show_header_toggle: false
-            entities:
-              - entity: sensor.wtvb01_disp_x
-                name: Displacement X (µm)
-              - entity: sensor.wtvb01_disp_y
-                name: Displacement Y (µm)
-              - entity: sensor.wtvb01_disp_z
-                name: Displacement Z (µm)
-              - type: divider
-              - entity: sensor.wtvb01_freq_x
-                name: Frequency X (Hz)
-              - entity: sensor.wtvb01_freq_y
-                name: Frequency Y (Hz)
-              - entity: sensor.wtvb01_freq_z
-                name: Frequency Z (Hz)
-              - type: divider
-              - entity: sensor.wtvb01_vel_x
-                name: Velocity X (mm/s)
-              - entity: sensor.wtvb01_vel_y
-                name: Velocity Y (mm/s)
-              - entity: sensor.wtvb01_vel_z
-                name: Velocity Z (mm/s)
-          - type: history-graph
-            title: WTVB01 - 24h Vibration Displacement (µm)
-            hours_to_show: 24
-            entities:
-              - entity: sensor.wtvb01_disp_x
-                name: Disp X
-              - entity: sensor.wtvb01_disp_y
-                name: Disp Y
-              - entity: sensor.wtvb01_disp_z
-                name: Disp Z
+{
+  "title": "WitMotion Precision Dynamics",
+  "views": [
+    {
+      "title": "Live Telemetry",
+      "path": "live",
+      "icon": "mdi:axis-arrow",
+      "type": "masonry",
+      "cards": [
+        {
+          "type": "vertical-stack",
+          "cards": [
+            {
+              "type": "entities",
+              "title": "HWT9053-485 Inclinometer (USB)",
+              "show_header_toggle": false,
+              "entities": [
+                {
+                  "entity": "sensor.hwt9053_roll_x_angle",
+                  "name": "Roll (X-Angle)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.hwt9053_pitch_y_angle",
+                  "name": "Pitch (Y-Angle)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.hwt9053_yaw_z_angle",
+                  "name": "Yaw (Z-Angle)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.hwt9053_accel_x",
+                  "name": "Acceleration X",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.hwt9053_accel_y",
+                  "name": "Acceleration Y",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.hwt9053_accel_z",
+                  "name": "Acceleration Z",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.hwt9053_gyro_x",
+                  "name": "Angular Velocity X",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.hwt9053_gyro_y",
+                  "name": "Angular Velocity Y",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.hwt9053_gyro_z",
+                  "name": "Angular Velocity Z",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.hwt9053_internal_temp",
+                  "name": "Internal Die Temperature",
+                  "secondary_info": "last-updated"
+                }
+              ]
+            },
+            {
+              "type": "history-graph",
+              "title": "HWT9053 - 24h Precision Tilt (Roll & Pitch)",
+              "hours_to_show": 24,
+              "entities": [
+                {
+                  "entity": "sensor.hwt9053_roll_x_angle",
+                  "name": "Roll"
+                },
+                {
+                  "entity": "sensor.hwt9053_pitch_y_angle",
+                  "name": "Pitch"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "vertical-stack",
+          "cards": [
+            {
+              "type": "entities",
+              "title": "WT901BLE68 9-Axis AHRS (BLE)",
+              "show_header_toggle": false,
+              "entities": [
+                {
+                  "entity": "sensor.wt901ble68_roll",
+                  "name": "Roll (X-Angle)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wt901ble68_pitch",
+                  "name": "Pitch (Y-Angle)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wt901ble68_yaw",
+                  "name": "Yaw (Z-Angle)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wt901ble68_acc_x",
+                  "name": "Acceleration X",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wt901ble68_acc_y",
+                  "name": "Acceleration Y",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wt901ble68_acc_z",
+                  "name": "Acceleration Z",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wt901ble68_gyro_x",
+                  "name": "Angular Velocity X",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wt901ble68_gyro_y",
+                  "name": "Angular Velocity Y",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wt901ble68_gyro_z",
+                  "name": "Angular Velocity Z",
+                  "secondary_info": "last-updated"
+                }
+              ]
+            },
+            {
+              "type": "history-graph",
+              "title": "WT901BLE68 - 24h Orientation Angles",
+              "hours_to_show": 24,
+              "entities": [
+                {
+                  "entity": "sensor.wt901ble68_roll",
+                  "name": "Roll"
+                },
+                {
+                  "entity": "sensor.wt901ble68_pitch",
+                  "name": "Pitch"
+                },
+                {
+                  "entity": "sensor.wt901ble68_yaw",
+                  "name": "Yaw"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "vertical-stack",
+          "cards": [
+            {
+              "type": "entities",
+              "title": "WTVB01-BT50 Vibration (BLE)",
+              "show_header_toggle": false,
+              "entities": [
+                {
+                  "entity": "sensor.wtvb01_disp_x",
+                  "name": "Displacement X (µm)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wtvb01_disp_y",
+                  "name": "Displacement Y (µm)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wtvb01_disp_z",
+                  "name": "Displacement Z (µm)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wtvb01_freq_x",
+                  "name": "Frequency X (Hz)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wtvb01_freq_y",
+                  "name": "Frequency Y (Hz)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wtvb01_freq_z",
+                  "name": "Frequency Z (Hz)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wtvb01_vel_x",
+                  "name": "Velocity X (mm/s)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wtvb01_vel_y",
+                  "name": "Velocity Y (mm/s)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wtvb01_vel_z",
+                  "name": "Velocity Z (mm/s)",
+                  "secondary_info": "last-updated"
+                },
+                {
+                  "entity": "sensor.wtvb01_temperature",
+                  "name": "Sensor Temperature",
+                  "secondary_info": "last-updated"
+                }
+              ]
+            },
+            {
+              "type": "history-graph",
+              "title": "WTVB01 - 24h Vibration Displacement (µm)",
+              "hours_to_show": 24,
+              "entities": [
+                {
+                  "entity": "sensor.wtvb01_disp_x",
+                  "name": "Disp X"
+                },
+                {
+                  "entity": "sensor.wtvb01_disp_y",
+                  "name": "Disp Y"
+                },
+                {
+                  "entity": "sensor.wtvb01_disp_z",
+                  "name": "Disp Z"
+                }
+              ]
+            },
+            {
+              "type": "history-graph",
+              "title": "WTVB01 - 24h Vibration Frequency (Hz)",
+              "hours_to_show": 24,
+              "entities": [
+                {
+                  "entity": "sensor.wtvb01_freq_x",
+                  "name": "Freq X"
+                },
+                {
+                  "entity": "sensor.wtvb01_freq_y",
+                  "name": "Freq Y"
+                },
+                {
+                  "entity": "sensor.wtvb01_freq_z",
+                  "name": "Freq Z"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "24h Acceleration & Drift",
+      "path": "history",
+      "icon": "mdi:chart-Timeline-variant",
+      "type": "masonry",
+      "cards": [
+        {
+          "type": "history-graph",
+          "title": "HWT9053 - 24h 3-Axis Acceleration (g)",
+          "hours_to_show": 24,
+          "entities": [
+            {
+              "entity": "sensor.hwt9053_accel_x",
+              "name": "Accel X"
+            },
+            {
+              "entity": "sensor.hwt9053_accel_y",
+              "name": "Accel Y"
+            },
+            {
+              "entity": "sensor.hwt9053_accel_z",
+              "name": "Accel Z"
+            }
+          ]
+        },
+        {
+          "type": "history-graph",
+          "title": "WT901BLE68 - 24h 3-Axis Acceleration (g)",
+          "hours_to_show": 24,
+          "entities": [
+            {
+              "entity": "sensor.wt901ble68_acc_x",
+              "name": "Accel X"
+            },
+            {
+              "entity": "sensor.wt901ble68_acc_y",
+              "name": "Accel Y"
+            },
+            {
+              "entity": "sensor.wt901ble68_acc_z",
+              "name": "Accel Z"
+            }
+          ]
+        },
+        {
+          "type": "history-graph",
+          "title": "WTVB01 - 24h Vibration Velocity (mm/s)",
+          "hours_to_show": 24,
+          "entities": [
+            {
+              "entity": "sensor.wtvb01_vel_x",
+              "name": "Vel X"
+            },
+            {
+              "entity": "sensor.wtvb01_vel_y",
+              "name": "Vel Y"
+            },
+            {
+              "entity": "sensor.wtvb01_vel_z",
+              "name": "Vel Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

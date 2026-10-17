@@ -1,0 +1,133 @@
+# WitMotion HWT9053-485 / HWT905 Native Modbus Configuration
+# Include this file in your configuration.yaml via:
+# modbus: !include modbus_hwt9053.yaml
+
+- name: hwt9053_hub
+  type: serial
+  port: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
+  baudrate: 9600
+  bytesize: 8
+  method: rtu
+  parity: N
+  stopbits: 1
+  sensors:
+    - name: "HWT9053 Roll (X-Angle)"
+      unique_id: hwt9053_roll
+      slave: 80
+      address: 61
+      input_type: holding
+      data_type: int16
+      scale: 0.0054931640625
+      precision: 3
+      unit_of_measurement: "°"
+      state_class: measurement
+      scan_interval: 1
+
+    - name: "HWT9053 Pitch (Y-Angle)"
+      unique_id: hwt9053_pitch
+      slave: 80
+      address: 62
+      input_type: holding
+      data_type: int16
+      scale: 0.0054931640625
+      precision: 3
+      unit_of_measurement: "°"
+      state_class: measurement
+      scan_interval: 1
+
+    - name: "HWT9053 Yaw (Z-Angle)"
+      unique_id: hwt9053_yaw
+      slave: 80
+      address: 63
+      input_type: holding
+      data_type: int16
+      scale: 0.0054931640625
+      precision: 3
+      unit_of_measurement: "°"
+      state_class: measurement
+      scan_interval: 1
+
+    - name: "HWT9053 Accel X"
+      unique_id: hwt9053_acc_x
+      slave: 80
+      address: 52
+      input_type: holding
+      data_type: int16
+      scale: 0.00048828125
+      precision: 4
+      unit_of_measurement: "g"
+      state_class: measurement
+      scan_interval: 1
+
+    - name: "HWT9053 Accel Y"
+      unique_id: hwt9053_acc_y
+      slave: 80
+      address: 53
+      input_type: holding
+      data_type: int16
+      scale: 0.00048828125
+      precision: 4
+      unit_of_measurement: "g"
+      state_class: measurement
+      scan_interval: 1
+
+    - name: "HWT9053 Accel Z"
+      unique_id: hwt9053_acc_z
+      slave: 80
+      address: 54
+      input_type: holding
+      data_type: int16
+      scale: 0.00048828125
+      precision: 4
+      unit_of_measurement: "g"
+      state_class: measurement
+      scan_interval: 1
+
+    - name: "HWT9053 Gyro X"
+      unique_id: hwt9053_gyro_x
+      slave: 80
+      address: 55
+      input_type: holding
+      data_type: int16
+      scale: 0.06103515625
+      precision: 3
+      unit_of_measurement: "°/s"
+      state_class: measurement
+      scan_interval: 1
+
+    - name: "HWT9053 Gyro Y"
+      unique_id: hwt9053_gyro_y
+      slave: 80
+      address: 56
+      input_type: holding
+      data_type: int16
+      scale: 0.06103515625
+      precision: 3
+      unit_of_measurement: "°/s"
+      state_class: measurement
+      scan_interval: 1
+
+    - name: "HWT9053 Gyro Z"
+      unique_id: hwt9053_gyro_z
+      slave: 80
+      address: 57
+      input_type: holding
+      data_type: int16
+      scale: 0.06103515625
+      precision: 3
+      unit_of_measurement: "°/s"
+      state_class: measurement
+      scan_interval: 1
+
+    - name: "HWT9053 Internal Temp"
+      unique_id: hwt9053_temperature
+      slave: 80
+      address: 64
+      input_type: holding
+      data_type: int16
+      scale: 0.01
+      precision: 2
+      unit_of_measurement: "°C"
+      device_class: temperature
+      state_class: measurement
+      scan_interval: 5
