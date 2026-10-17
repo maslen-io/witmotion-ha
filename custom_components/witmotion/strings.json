@@ -1,0 +1,10 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "WitMotion Sensors",
+        "description": "Configure WitMotion Bluetooth and RS-485 Modbus sensors"
+      }
+    }
+  }
+}
